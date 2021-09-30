@@ -1,0 +1,60 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Latex stylesheet for influence diagrams
+%
+% Version: 2021-01-11.3
+%
+% Copyright 2020 Tom Everitt
+%
+% Licensed under the Apache License, Version 2.0 (the "License");
+% you may not use this file except in compliance with the License.
+% You may obtain a copy of the License at
+%
+%     http://www.apache.org/licenses/LICENSE-2.0
+%
+% Unless required by applicable law or agreed to in writing, software
+% distributed under the License is distributed on an "AS IS" BASIS,
+% WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+% See the License for the specific language governing permissions and
+% limitations under the License.
+
+
+\documentclass{article}
+\usepackage[decisionutilitycolor]{influence-diagrams}
+\NewDocumentCommand\voci{O{}D<>{1}m}{\incentive{#3}{incentive, gray,#1}{#2}}
+
+\begin{document}
+
+\section{Maxim effectiveness is circumstance-dependent}
+
+\begin{influence-diagram}
+  \node (Circumstance) {$C$};
+  \node (Action) [below = of Circumstance, decision] {$A$};
+  \node (Goal) [right = of Action, utility] {$G$};
+
+  \edge[information] {Circumstance} {Action};
+  \edge {Action} {Goal};
+  \edge {Circumstance} {Goal};
+\
+ \end{influence-diagram}
+
+\section{Effective maxim is a necessary cause}
+
+\begin{influence-diagram}
+  \node (NotAction) [decision] {$\lnot A$};
+  \node (NotGoal) [right = of NotAction, utility] {$\lnot G$};
+  \node (Circumstance) [below = of NotAction] {$C$};
+  \node (Action) [below = of Circumstance, decision] {$A$};
+  \node (Goal) [right = of Action, utility] {$G$};
+
+  \edge[information] {Circumstance} {Action};
+  \edge {Action} {Goal};
+  \edge {Circumstance} {Goal};
+  \edge {Circumstance} {NotGoal};
+  \edge {NotAction} {NotGoal};
+\
+ \end{influence-diagram}
+
+
+
+\end{document}

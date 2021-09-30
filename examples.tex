@@ -42,11 +42,11 @@
 
 
 \begin{influence-diagram}
-  
+
   \node (S1) {$S_1$};
   \node (S2) [right = 2 of S1] {$S_2$};
   \node (S3) [right = 2 of S2] {$S_3$};
-  
+
   \node (R1) [below = of S1, utility] {$R_1$};
   \node (R2) [below = of S2, utility] {$R_2$};
   \node (R3) [below = of S3, utility] {$R_3$};
@@ -83,7 +83,7 @@
   \node (S1) {$S_1$};
   \node (S2) [right = 2 of S1] {$S_2$};
   \node (S3) [right = 2 of S2] {$S_3$};
-  
+
   \node (R1) [below = of S1, utility] {$R_1$};
   \node (R2) [below = of S2, utility] {$R_2$};
   \node (R3) [below = of S3, utility] {$R_3$};
@@ -165,7 +165,7 @@
   \ri<2>{S1}
   \fci<3>{S1}
   \voc<4>{S1}
-  
+
   % newly defined
   \voci<5>{S1}
 \end{influence-diagram}
@@ -196,7 +196,7 @@
   \node (U1) [right = of help, utility, player1] {$U_1$};
   \node (U2) [left = of help, utility, player2] {$U_2$};
   \node (C) at (U2|-P1) {$C$};
-  
+
   \edge[information] {C} {P1};
   \edge[information] {P1} {P2};
   \edge {P1,P2} {U1};
@@ -261,7 +261,7 @@
 \begin{influence-diagram}
   \setrectangularnodes
   \setcompactsize
- 
+
   \node (R) [] {Race};
   \node (S) [below= of R] {High school};
   \node (E) [below= of S] {Education};
@@ -287,11 +287,11 @@
 \section{Putting it all together}
 
 \begin{influence-diagram}
-  
+
   \node (S1) {$S_1$};
   \node (S2) [right = 2 of S1] {$S_2$};
   \node (S3) [right = 2 of S2] {$S_3$};
-  
+
   \node (R1) [below = of S1, utility] {$R_1$};
   \node (R2) [below = of S2, utility] {$R_2$};
   \node (R3) [below = of S3, utility] {$R_3$};
@@ -336,7 +336,7 @@
   \path (causal.west) edge[->] (causal.east);
   \path (information.west) edge[->, information] (information.east);
 
-    
+
 \end{influence-diagram}
 
 
